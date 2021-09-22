@@ -1,0 +1,125 @@
+/** GENERAL */
+  html {
+    text-align: center;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    /**font-size: calc(5px + 2vmin);*/
+  }
+  /**a:link {
+    color: pink; /**#61dafb;
+  }*/
+  body {
+    flex: 1;
+    background-color: white; /**#fff8f2;*/
+    height: 100vh;
+  }
+  
+
+/** HEADER */
+  header {
+    top: 0;
+    min-height: 100px;
+    background-color: #3D43DD; /**#ff8000 purple*/;
+    color: white;
+    border-radius: 10px;
+  }
+  header h1 {
+    float: left;
+    position: relative;
+    left: 30px;
+    font-size: 35px !important;
+  }
+  header div {
+    top: 40%;
+    float: right;
+    position: relative;
+    right: 30px;
+    font-size: 17px !important;
+  }
+  /** MENÚ PRINCIPAL */
+    .menu_principal {
+      display: flex;
+      justify-content: center;
+      right: 30%;
+      top: 85px;
+      overflow: hidden;
+    }
+    
+    .boton_menu_principal {
+      transition: 0.1s;
+      float: left;
+      color: #3D43DD;
+      font-weight : bold ;
+      background-color: white;
+      text-align: center;
+      padding: 5px 16px;
+      border: none;
+      border-radius: 10px;
+      outline: none;
+      font-family: inherit;
+      margin: 0px 10px;
+      font-size: 20px !important;
+    }
+    
+    .boton_menu_principal:hover {
+      transition: 0.3s;
+      border-top: 3px solid #3D43DD;
+      /**color: #ff8000;
+      border-top: 3px solid white;*/ /**#ffc284;*/
+    }
+    .boton_menu_principal:focus {
+      transition: 0.3s;
+      color: white;
+      background-color: #3D43DD;
+      /**color: #ff8000;
+      border-bottom: 3px solid white;*/ /**#ff8000;*/
+    }
+
+/** FOOTER */
+  footer {
+    background-color: #e0d8d1;
+    padding-right: 2%;
+    text-align: right;
+    color: black;
+    font-size: calc(3px + 2vmin);
+  }
+
+/** CONTENIDO CENTRAL */
+  .contenido {
+    /**border: 3px solid green;*/
+    border-radius: 15px;
+    margin: 50px 100px;
+    padding: 10px;
+    
+
+    position:relative;
+    overflow:hidden;
+    height: 300px; /** altura máxima de la pantalla*/
+    border-radius: 10px;
+  }
+  .contenido .menu_izquierda {
+    position:absolute;
+    display: inline-block;
+    border: 3px solid black;
+    border-radius: 15px;
+    margin: 10px;
+    padding: 10px;
+    width: 25%;
+    top: 0;
+    bottom: 0;
+    left: 0;
+  }
+  .contenido .contenido_derecha {
+    position:absolute;
+    display: inline-block;
+    top: 0px;
+    border: 3px solid red;
+    border-radius: 15px;
+    margin: 10px;
+    padding: 10px;
+    width: 65%;
+    right: 0;
+    top: 0;
+    bottom: 0;
+  }
