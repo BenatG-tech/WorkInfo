@@ -34,6 +34,8 @@ $routes->setAutoRoute(true);
 // route since we don't have to scan directories.
 //$routes->get('/', 'Home::index');
 $routes->get('/', 'AppController::index');
+$routes->post('/calendario', 'CalendarioController::index');
+$routes->post('/registroDiario', 'RegistroDiarioController::index');
 
 /*
  * --------------------------------------------------------------------

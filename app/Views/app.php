@@ -12,24 +12,21 @@
 <body>
 
 <header>
-	<h1>WORK INFO</h1>
+	<h1>~ WORK INFO ~</h1>
 	<div class="menu_principal">
-		<a href="" target="_blank"><button class="boton_menu_principal">Calendario</button><a>
-		<button class="boton_menu_principal">Registro de Horas</button>
-		<button class="boton_menu_principal">Horas libres</button>
-		<button class="boton_menu_principal">Hola</button>
+		<form action="calendario" method="post">
+			<button class="boton_menu_principal" name="calendario">Calendario</button>
+		</form type="submit">
+		<form action="registroDiario" method="post">
+			<button class="boton_menu_principal" name="calendario">Registro de Horas</button>
+		</form type="submit">
+		<form action="contador" method="post">
+			<button class="boton_menu_principal" name="calendario">Contador</button>
+		</form type="submit">
 	</div>
 </header>
 
-<div class="contenido">
-	<!--?= $this->renderSection('content') ?-->
-	<div class="menu_izquierda">
-		<h1>Esto es el menú de la izquierda.</h1>
-	</div>
-	<div class="contenido_derecha">
-		<h1>Esto es el contenido de la derecha.</h1>
-	</div>
-</div>
+<?= $this->renderSection('content') ?>
 
 <footer>
 	<div>
