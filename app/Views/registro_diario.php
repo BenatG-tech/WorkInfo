@@ -23,51 +23,35 @@
 			<h1><?php echo $date ?></h1>
 		</div>
 		<div class="registros">
-			<div class="registros_izquierda">
-				<?php for ($j = 1; $j <= date('t')/2; $j++) { ?>
-					<div class="registro">
-						<h3 class="registro_elemento">Día: <?php echo $j ?></h3>
-						<div class="registro_horario">
-							<p class="registro_elemento">Desde:</p>
-							<select class="registro_elemento">
-								<?php for ($i = 0; $i < count($horas); $i++) { ?>
-									<option><?php echo $horas[$i] ?></option>
-								<?php } ?>
-							</select>
-							<p class="registro_elemento">Hasta:</p>
-							<select class="registro_elemento">
-								<?php for ($i = 0; $i < count($horas); $i++) { ?>
-									<option><?php echo $horas[$i] ?></option>
-								<?php } ?>
-							</select>
+				<?php $semanaNueva = 1;
+				for ($j = 1; $j <= intval(date('t')); $j++) { ?>
+					<?php if ($semanaNueva == 1) { ?>
+						<h2>Semana X:</h2>
+						<div class="registros_semana">	
+					<?php $semanaNueva = 0; } ?>
+							<div class="registro_s">
+								<h3 class="registro_elemento">Día: <?php echo $j ?></h3>
+								<p class="registro_elemento">Total: </p>
+								<div class="registro_horario">
+									<p class="registro_elemento">Desde:</p>
+									<select class="registro_elemento">
+										<?php for ($i = 0; $i < count($horas); $i++) { ?>
+											<option><?php echo $horas[$i] ?></option>
+										<?php } ?>
+									</select>
+									<p class="registro_elemento">Hasta:</p>
+									<select class="registro_elemento">
+										<?php for ($i = 0; $i < count($horas); $i++) { ?>
+											<option><?php echo $horas[$i] ?></option>
+										<?php } ?>
+									</select>
+									<button> + </button>
+								</div>
+							</div>
+					<?php if ($j%7 == 0) {?>
 						</div>
-						<p class="registro_elemento">Total: </p>
-					</div>
-				<?php } ?>
-			</div>
-			<div class="registros_derecha">
-				<?php for ($j = date('t')/2 + 1; $j <= date('t'); $j++) { ?>
-					<div class="registro">
-						<h3 class="registro_elemento">Día: <?php echo $j ?></h3>
-						<div class="registro_horario">
-							<p class="registro_elemento">Desde:</p>
-							<select class="registro_elemento">
-								<?php for ($i = 0; $i < count($horas); $i++) { ?>
-									<option><?php echo $horas[$i] ?></option>
-								<?php } ?>
-							</select>
-							<p class="registro_elemento">Hasta:</p>
-							<select class="registro_elemento">
-								<?php for ($i = 0; $i < count($horas); $i++) { ?>
-									<option><?php echo $horas[$i] ?></option>
-								<?php } ?>
-							</select>
-						</div>
-						<p class="registro_elemento">Total: </p>
-					</div>
-				<?php } ?>
-			</div>
-			
+					<?php $semanaNueva = 1; } 
+				} ?>
 				
 		</div>
 		
