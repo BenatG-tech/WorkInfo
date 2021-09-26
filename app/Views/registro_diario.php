@@ -4,9 +4,7 @@
 
 <?php
 	$meses = array("Enero","Febrero","Marzo","Abril","Mayo","Junio","Julio","Agosto","Septiembre","Octubre","Noviembre","Diciembre");
-	$month = $meses[date('n') - 1];
-	$year = date('Y');
-	$date = $month . " (" . $year . ")";
+	$date = $meses[date('n') - 1] . " (" . $calendario[1]["anno"] . ")";
 	$horas = array('00:00', '00:15', '00:30', '00:45', '01:00', '01:15', '01:30', '01:45','02:00', '02:15', '02:30', '02:45','03:00', '03:15', '03:30', '03:45','04:00', '04:15', '04:30', '04:45',
 			'05:00', '05:15', '05:30', '05:45','06:00', '06:15', '06:30', '06:45','07:00', '07:15', '07:30', '07:45','08:00', '08:15', '08:30', '08:45','09:00', '09:15', '09:30', '09:45',
 			'10:00', '10:15', '10:30', '10:45','11:00', '11:15', '11:30', '11:45','12:00', '12:15', '12:30', '12:45','13:00', '13:15', '13:30', '13:45','14:00', '14:15', '14:30', '14:45',
@@ -23,34 +21,34 @@
 			<h1><?php echo $date ?></h1>
 		</div>
 		<div class="registros">
-				<?php $semanaNueva = 1;
-				for ($j = 1; $j <= intval(date('t')); $j++) { ?>
-					<?php if ($semanaNueva == 1) { ?>
-						<h2>Semana X:</h2>
+				<?php $nSemana = 2;
+				for ($i = 1; $i <= intval(count($calendario)); $i++) { ?>
+					<?php if ($nSemana % 2 == 0) { ?>
+						<h2>Semana nº<?php echo $nSemana / 2 ?>:</h2>
 						<div class="registros_semana">	
-					<?php $semanaNueva = 0; } ?>
+					<?php $nSemana += 1; } ?>
 							<div class="registro_s">
-								<h3 class="registro_elemento">Día: <?php echo $j ?></h3>
-								<p class="registro_elemento">Total: </p>
+								<h3 class="registro_elemento">Día: <?php echo $i ?></h3>
+								<p class="registro_elemento"> (0,0h) </p>
 								<div class="registro_horario">
 									<p class="registro_elemento">Desde:</p>
 									<select class="registro_elemento">
-										<?php for ($i = 0; $i < count($horas); $i++) { ?>
-											<option><?php echo $horas[$i] ?></option>
+										<?php for ($j = 0; $j < count($horas); $j++) { ?>
+											<option><?php echo $horas[$j] ?></option>
 										<?php } ?>
 									</select>
 									<p class="registro_elemento">Hasta:</p>
 									<select class="registro_elemento">
-										<?php for ($i = 0; $i < count($horas); $i++) { ?>
-											<option><?php echo $horas[$i] ?></option>
+										<?php for ($k = 0; $k < count($horas); $k++) { ?>
+											<option><?php echo $horas[$k] ?></option>
 										<?php } ?>
 									</select>
 									<button> + </button>
 								</div>
 							</div>
-					<?php if ($j%7 == 0) {?>
+					<?php if (intval($calendario[$i - 1]["pos_dia"])%7 == 0) {?>
 						</div>
-					<?php $semanaNueva = 1; } 
+					<?php $nSemana += 1; } 
 				} ?>
 				
 		</div>

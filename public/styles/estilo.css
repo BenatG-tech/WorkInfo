@@ -168,7 +168,7 @@
   .registro_s {
     float: left;
     text-align: center;
-    width: 30%;
+    width: 24%;
     margin-top: 10px;
     /**background-color: blue;*/
   }
@@ -181,3 +181,47 @@
   .registro_elemento {
     display: inline;
   }
+
+  .calendario {
+    display: table;
+    clear: both;
+    width: 100%;
+    background-color: lightsalmon;
+    border-radius: 10px;
+  }
+
+  .mes {
+    float: left;
+    text-align: center;
+    width: 24%;
+    margin-top: 10px;
+  }
+  .dias {
+    display: table;
+    clear: both;
+    text-align: center;
+    /**padding-left: 13%; centrar en todas las pantallas*/
+  }
+  .semana {
+    width: 100%;
+    text-align: left;
+  }
+  .sPrimera {
+    width: 100%;
+    text-align: right;
+  }
+  .finSemana {
+    background-color: lightseagreen;
+  }
+  .dia {
+    width: 30px;
+  }
+
+  .finsemana {
+    background-color: lightseagreen;
+  }
+
+  .fiesta {
+    background-color: red;
+  }
+
